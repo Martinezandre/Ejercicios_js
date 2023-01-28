@@ -3,17 +3,14 @@
 //1 Pedir nombre al usuario y saludarlo.
 const $exer1Form = document.getElementById('exer1');
 const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-
 $exer1Form.addEventListener('submit', (e) => {
     e.preventDefault();
     if($exer1Form.name.value.length==0 || /^\s+$/.test($exer1Form.name.value) ){
         alert("Campo vacio! ", 'success');
     }else{
     alert(`Hola, ${$exer1Form.name.value}!`, 'success');
-}
-        
+}        
 });
-
 const alert = (message, type) => {
     const wrapper = document.createElement('div');
     wrapper.innerHTML = [
@@ -25,165 +22,436 @@ const alert = (message, type) => {
         alertPlaceholder.append(wrapper);
 };
 
-
-
-
-
-
-
 // Pedir edad al usuario y responder si es o no es mayor de edad.
-function esMayorDeEdad() {
-    const edad = Number(prompt('Escribe tu edad'));
-    edad >= 18 ? alert('Eres mayor de edad') : alert('Eres menor de edad');
-  }
-  //esMayorDeEdad();
-  
-  /* Pedir nombre y edad al usuario,
-  si se llama Pepita y es mayor de edad permitir ingreso a sala de espera 1,
-  si se llama Pepita y es menor de edad permitir ingreso a sala de espera 2,
-  si no se llama Pepita pero es mayor de edad permitir ingreso a sala de espera 3,
-  sino dirigir a la sala de espera. 4 */
+const $exer2Form=document.getElementById("exer2");
+const alertPlaceholder2 = document.getElementById('liveAlertPlaceholder2');
+$exer2Form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    verEdad();    
+});
+function verEdad(){
+    const edad=$exer2Form.edad.value;
+    if(edad.length==0 || /^\s+$/.test(edad) ){
+        alert1("Campo vacio");
+    }
+    else if(edad>=18){
+        alert1('Usted es mayor de edad','success' );
+    }
+    else {
+        alert1("Usted no es mayor de edad");
+    }
+}
+const alert1 = (message, type) => {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+      `<div class="alert alert-warning alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>',
+    ].join('');  
+    alertPlaceholder2.append(wrapper);
+  };
   
   // Pedir un número y mostrar los números pares desde 1 hasta n.
-  function multiplosDeDos() {
-    const numero = parseInt(prompt('Ingresa un número'));
-    let pares = '';
-    for (let i = 1; i <= numero; i++) {
-      if (i % 2 === 0) {
-        pares += i + ', ';
-      }
-    }
-    alert(`Los números pares desde 1 hasta ${numero}, son: ${pares}`);
+  const $exer3Form=document.getElementById("exer3");
+const alertPlaceholder3 = document.getElementById('liveAlertPlaceholder3');
+$exer3Form.addEventListener('submit', (e) =>{
+  e.preventDefault();
+  pares();
+});
+const alert2 = (message, type) => {
+  const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+      `<div class="alert alert-info alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>',
+    ].join('');  
+    alertPlaceholder3.append(wrapper);
   }
-  //multiplosDeDos();
+function pares(){
+  const numero1=parseInt($exer3Form.num1.value);
+  if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+    alert3("El valor ingresado debe ser un número o esta en blanco")
+  }else{
+    let i=0;
+    let resultado=0;
+    for (let i = 0; i<=numero1 ; i++) {
+      if (i % 2 ===0) {
+          resultado=resultado+i;          
+      }
+      }
+      alert2("La suma total de los número pares es : "+ resultado);
+  }
+}
   
   // Pedir un número, mostrar el doble de n.
-  function elDoble() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    const resultado = numero * 2;
-    alert('El doble de ' + numero + ' es: ' + resultado);
-  }
-  //elDoble();
+  const $exer4Form=document.getElementById("exer4");
+  const alertPlaceholder4 = document.getElementById('liveAlertPlaceholder4');
+  $exer4Form.addEventListener('submit', (e) =>{
+    e.preventDefault();    
+  });
+  const alert3 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-secondary alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder4.append(wrapper);
+    }
+  function doble(){
+    const numero1=parseInt($exer4Form.num1.value);
+    if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert3("El valor ingresado debe ser un número o esta en blanco")
+    }else{
+      const resultado= numero1*2;
+      alert3("El doble del número ingresado es : " +resultado);
+    }
+  }  
   
   // Pedir un número, mostrar el triple de n.
-  function elTriple() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    const resultado = numero * 3;
-    alert(`El triple de ${numero} es: ${resultado}`);
-  }
-  //elTriple();
+  const $exer5Form=document.getElementById("exer5");
+  const alertPlaceholder5 = document.getElementById('liveAlertPlaceholder5');
+  $exer5Form.addEventListener('submit', (e) =>{
+    e.preventDefault();    
+  });
+  const alert4 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-secondary alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder5.append(wrapper);
+    }
+  function triple(){
+    const numero1=parseInt($exer5Form.num1.value);
+    if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert4("El valor ingresado debe ser un número o esta en blanco")
+    }else{
+      const resultado= numero1*3;
+      alert4("El triple del número ingresado es : " +resultado);
+    }
+  } 
   
   // Pedir un número, mostrar la mitad de n.
-  function laMitad() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    const resultado = numero / 2;
-    alert('La mitad de ' + numero + ' es: ' + resultado);
-  }
-  //laMitad();
+  const $exer6Form=document.getElementById("exer6");
+  const alertPlaceholder6 = document.getElementById('liveAlertPlaceholder6');
+  $exer6Form.addEventListener('submit', (e) =>{
+    e.preventDefault();    
+  });
+  const alert5 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-secondary alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder6.append(wrapper);
+    }
+  function mitad(){
+    const numero1=parseInt($exer6Form.num1.value);
+    if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert5("El valor ingresado debe ser un número o esta en blanco")
+    }else if(numero1===0){
+      alert5("El valor ingresado debe ser distinto de CERO")
+    }else{
+      const resultado= numero1/2;
+      alert5("La mitad del número ingresado es : " +resultado);
+    }
+  } 
   
   // Pedir un número, mostrar la tercera parte de n.
-  function terceraParte() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    const resultado = numero / 3;
-    alert('La tercera parte de ' + numero + ' es: ' + resultado);
-  }
-  //terceraParte();
+  const $exer7Form=document.getElementById("exer7");
+  const alertPlaceholder7 = document.getElementById('liveAlertPlaceholder7');
+  $exer7Form.addEventListener('submit', (e) =>{
+    e.preventDefault();    
+  });
+  const alert6 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-secondary alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder7.append(wrapper);
+    }
+  function tercio(){
+    const numero1=parseInt($exer7Form.num1.value);
+    if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert6("El valor ingresado debe ser un número o esta en blanco")
+    }else if(numero1===0){
+      alert6("El valor ingresado debe ser distinto de CERO")
+    }else{
+      const resultado= numero1/3;
+      alert6("La tercera parte del número ingresado es : " +resultado);
+    }
+  } 
   
   // Pedir un número, mostrar el cuadrado de n.
-  function elCuadrado() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    alert(`El cuadrado de ${numero} es: ${numero * numero}`);
-  }
-  //elCuadrado();
+  const $exer8Form=document.getElementById("exer8");
+  const alertPlaceholder8 = document.getElementById('liveAlertPlaceholder8');
+  $exer8Form.addEventListener('submit', (e) =>{
+    e.preventDefault();    
+  });
+  const alert7 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-secondary alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder8.append(wrapper);
+    }
+  function cuadrado(){
+    const numero1=parseInt($exer8Form.num1.value);
+    if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert7("El valor ingresado debe ser un número o esta en blanco")
+    }else if(numero1===0){
+      alert7("El valor ingresado debe ser distinto de CERO")
+    }else{
+      const resultado= numero1*numero1;
+      alert7("La cuadrado del número ingresado es : " +resultado);
+    }
+  } 
   
   // Pedir un número, mostrar n reducido en 5.
-  function reducidoEn5() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    alert(`El número ${numero} reducido en 5 es: ${numero - 5}`);
-  }
-  //reducidoEn5();
+  const $exer9Form=document.getElementById("exer9");
+  const alertPlaceholder9 = document.getElementById('liveAlertPlaceholder9');
+  $exer9Form.addEventListener('submit', (e) =>{
+    e.preventDefault();    
+  })
+  const alert8 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-secondary alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder9.append(wrapper);
+    }
+  function menosCinco(){
+    const numero1=parseInt($exer9Form.num1.value);
+    if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert8("El valor ingresado debe ser un número o esta en blanco")
+    }else{
+      const resultado= numero1-5;
+      alert8("El número ingresado reducido en CINCO es: " +resultado);
+    }
+  } 
   
   // Pedir un número, mostrar el doble de n más 4.
-  function elDobleMas4() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    const resultado = numero * 2 + 4;
-    alert(`El doble de ${numero} más 4 es: ${resultado}`);
-  }
-  //elDobleMas4();
+  const $exer10Form=document.getElementById("exer10");
+  const alertPlaceholder10 = document.getElementById('liveAlertPlaceholder10');
+  $exer10Form.addEventListener('submit', (e) =>{
+    e.preventDefault();    
+  })
+  const alert9 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-secondary alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder10.append(wrapper);
+    }
+  function dobleMasCuatro(){
+    const numero1=parseInt($exer10Form.num1.value);
+    if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert9("El valor ingresado debe ser un número o esta en blanco")
+    }else{
+      const resultado= (numero1*2)+4;
+      alert9("El deble del número ingresado más CUATRO es: " +resultado);
+    }
+  } 
   
   // Pedir un número, mostrar si es positivo, negativo o si es cero.
-  function ceroNegativoPositivo() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    if (numero === 0) {
-      alert('Ingresó el número cero.');
-    } else if (numero < 0) {
-      alert('Ingresó un número negativo.');
-    } else {
-      alert('Ingresó un número positivo.');
+  const $exer11Form=document.getElementById("exer11");
+  const alertPlaceholder11 = document.getElementById('liveAlertPlaceholder11');
+  $exer11Form.addEventListener('submit', (e) =>{
+    e.preventDefault();    
+  });
+  const alert10 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-secondary alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder11.append(wrapper);
     }
-  }
-  //ceroNegativoPositivo();
+  function positivoNegativoCero(){
+    const numero1=parseInt($exer11Form.num1.value);
+    if(numero1===0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert10("El valor ingresado es igual a CERO")
+    }else if(numero1<0){
+      alert10("El valor ingresado es Negativo")
+    }else{
+      alert10("El valor ingresado es Positivo");
+    }
+  } 
   
   // Pedir un número, mostrar si es par, impar o si es cero.
-  function ceroParImpar() {
-    const numero = parseInt(prompt('Ingrese un número:'));
-    if (numero === 0) {
-      alert('El numero ' + numero + ' es cero.');
-    } else if (numero % 2 === 0) {
-      alert('El numero ' + numero + ' es un número par.');
-    } else {
-      alert('El numero ' + numero + ' es un número impar.');
+  const $exer12Form=document.getElementById("exer12");
+  const alertPlaceholder12 = document.getElementById('liveAlertPlaceholder12');  
+  $exer12Form.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    parImparCero();
+  });  
+  const alert11 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-info alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');    
+      alertPlaceholder12.append(wrapper);
     }
-  }
-  //ceroParImpar();
+    function parImparCero(){
+      const numero1=parseInt($exer12Form.num1.value);
+        if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+          alert11("El valor ingresado debe ser un número o esta en blanco")
+        }else if(numero1===0 ){
+          alert11("El número ingresado es CERO")
+        }else if(numero1 % 2 === 0){
+          alert11("El número ingresado es Par");
+        }else{
+          alert11("El número ingresado es Impar");
+        }
+      }
   
   // Pedir un número, mostrar si es un número primo o no.
-  function esPrimo() {
-    const numero = parseInt(prompt('Ingresa un número mayor que 1:'));
-    if (numero < 2) {
-      alert('Error, debes ingresar un número mayor que 1');
-      return;
-      console.log('Esta línea NO se ejecutará porque está después de RETURN');
+  const $exer13Form=document.getElementById("exer13");
+  const alertPlaceholder13 = document.getElementById('liveAlertPlaceholder13');
+  $exer13Form.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    primo();
+  });
+  const alert12 = (message, type) => {
+    const wrapper = document.createElement('div');
+      wrapper.innerHTML = [
+        `<div class="alert alert-warning alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>',
+      ].join('');  
+      alertPlaceholder13.append(wrapper);
     }
-    let contador = 0;
-    for (let i = 1; i <= numero; i++) {
-      if (numero % i === 0) {
-        contador++;
+  function primo(){
+    const numero1=parseInt($exer13Form.num1.value);
+    if(numero1.length==0 || /^\s+$/.test(numero1)|| isNaN(numero1)){
+      alert12("El valor ingresado debe ser un número o esta en blanco")
+    }else if(numero1<2){
+      alert12("Ingrese un número mayor a UNO");
+      return;
+    }else{
+      let contador=0;
+      for(let i=1; i<=numero1; i++){
+        if(numero1 % i ===0){
+          contador++;
+        }
+      }
+      if(contador===2){
+        alert12("El número ingresado es Primo");
+      }else{
+        alert12("El número ingresado no es Primo");
       }
     }
-    if (contador === 2) {
-      alert(`El número ${numero}, es primo`);
-    } else {
-      alert(`El número ${numero}, no es primo`);
-    }
   }
-  //esPrimo();
   
   // Pedir dos números, mostrar la suma.
-  const suma = () => {
-    const numero1 = parseInt(prompt('Ingresa un primer número:'));
-    const numero2 = parseInt(prompt('Ingresa un segundo número:'));
-    alert(`${numero1} + ${numero2} = ${numero1 + numero2}`);
-  };
-  //suma();
+  const $exer14Form=document.getElementById("exer14");
+  const alertPlaceholder14 = document.getElementById('liveAlertPlaceholder14');
+  $exer14Form.addEventListener('click', (e) =>{
+    e.preventDefault(); 
+  });
+  const alert13 = (message, type) => {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+      `<div class="alert alert-dark alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>',
+    ].join('');
+    alertPlaceholder14.append(wrapper);
+  }
+  function suma(){
+    const num1=$exer14Form.num1.value;
+    const num2=$exer14Form.num2.value;
+    if(num1.length==0 || /^\s+$/.test(num1)|| isNaN(num1)
+        || num2.length==0 || /^\s+$/.test(num1)|| isNaN(num2)){
+          alert13("El valor ingresado debe ser un número o esta en blanco")
+    }else {
+      const resultado=parseFloat(num1)+parseFloat(num2);
+      alert13("El resultado de la SUMA es: " + resultado);
+    }
+  }
   
   // Pedir dos números, mostrar la resta.
-  const resta = () => {
-    const numero1 = parseInt(prompt('Ingresa un primer número:'));
-    const numero2 = parseInt(prompt('Ingresa un segundo número:'));
-    const resultado = numero1 - numero2;
-    alert(`${numero1} - ${numero2} = ${resultado}`);
-  };
-  //resta();
+  const $exer15Form=document.getElementById("exer15");
+  const alertPlaceholder15 = document.getElementById('liveAlertPlaceholder15');
+  $exer15Form.addEventListener('click', (e) =>{
+    e.preventDefault(); 
+  });
+  const alert14 = (message, type) => {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+      `<div class="alert alert-dark alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>',
+    ].join('');
+    alertPlaceholder15.append(wrapper);
+  }
+  function resta(){
+    const num1=$exer15Form.num1.value;
+    const num2=$exer15Form.num2.value;
+    if(num1.length==0 || /^\s+$/.test(num1)|| isNaN(num1)
+        || num2.length==0 || /^\s+$/.test(num1)|| isNaN(num2)){
+          alert14("El valor ingresado debe ser un número o esta en blanco")
+    }else {
+      const resultado=parseFloat(num1)-parseFloat(num2);
+      alert14("El resultado de la RESTA es: " + resultado);
+    }
+  }
   
   // Pedir dos números, mostrar la multiplicación.
-  function multiplica() {
-    const numero1 = parseInt(prompt('Ingresa un primer número:'));
-    const numero2 = parseInt(prompt('Ingresa un segundo número:'));
-    const resultado = numero1 * numero2;
-    alert(numero1 + ' x ' + numero2 + ' = ' + resultado);
+  const $exer16Form=document.getElementById("exer16");
+  const alertPlaceholder16 = document.getElementById('liveAlertPlaceholder16');
+  $exer16Form.addEventListener('click', (e) =>{
+    e.preventDefault(); 
+  });
+  const alert15 = (message, type) => {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = [
+      `<div class="alert alert-dark alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>',
+    ].join('');
+    alertPlaceholder16.append(wrapper);
   }
-  //multiplica();
+  function multiplicacion(){
+    const num1=$exer16Form.num1.value;
+    const num2=$exer16Form.num2.value;
+    if(num1.length==0 || /^\s+$/.test(num1)|| isNaN(num1)
+        || num2.length==0 || /^\s+$/.test(num1)|| isNaN(num2)){
+          alert15("El valor ingresado debe ser un número o esta en blanco")
+    }else {
+      const resultado=parseFloat(num1)*parseFloat(num2);
+      alert15("El resultado de la MULTIPLICACIÓN   es: " + resultado);
+    }
+  }
   
   // Pedir dos números, mostrar la división.
   function division() {

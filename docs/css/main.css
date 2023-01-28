@@ -1,12 +1,12 @@
+body{
+    margin: 0s;
+    background-color: #f7ea5c;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    margin: 0s;
-    background-color: #f7ea5c;
 }
 
 h1{
@@ -40,7 +40,7 @@ input{
 label, .accordion-button{
     font-size: 20px;
     color:#010101;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
 }
 

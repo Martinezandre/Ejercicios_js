@@ -1,0 +1,22 @@
+body{
+    margin: 0s;
+    background-color: #f7ea5c;
+}
+
+h3{
+    font-size: 40px;
+    text-align:center;
+    padding-top: 5px;
+    color:#3999da;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif 
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 60px;
+}
