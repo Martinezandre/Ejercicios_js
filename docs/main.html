@@ -67,25 +67,25 @@
         <div class="accordion-item">
         <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Pedir un número y mostrar los números pares desde 1 hasta n.
+                Pedir un número y mostrar la SUMA de los números pares desde 1 hasta n.
             </button>
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <section>
-                    <h3>3.Pedir un número, mostar la suma de los números pares desde 1 hasta n. </h3>
+                    <h3>3.Pedir un número y mostrar la SUMA de los números pares desde 1 hasta n.</h3>
                     <h3 id="liveAlertPlaceholder3"></h3>
                 <form class="exer1" id="exer3">
                     <div class="container-fluid">   
                             <label>Ingrese un número</label>
                             <input type="text" name="num1" id="">
-                            <button type="submit" class="btn btn-primary">ENVIAR</button>
+                            <button type="submit" class="btn btn-primary">SUMAR</button>
                     </div>
                 </form>
                 </section>
             </div>
-            </div>
         </div>
+    </div>
 
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingFour">
@@ -420,22 +420,27 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingSeventeen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
-                Pedir dos números, mostrar la división.
+                Pedir dos números y mostrar la división.
             </button>
             </h2>
             <div id="collapseSeventeen" class="accordion-collapse collapse" aria-labelledby="headingSeventeen" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <section>
-                    <h3>17.Pedir dos números, mostrar la división.</h3>
+                    <h3>17.Pedir dos números y mostrar la división.</h3>
                     <h3 id="liveAlertPlaceholder17"></h3>
                     <form class="exer1" id="exer17">
                         <div class="container-fluid">   
-                            <label>Ingrese un número</label>
+                            <label>Ingrese el primer número</label>
                             <input type="text" name="num1" id="">
-                            <button type="submit" class="btn btn-primary">VERIFICAR</button>
+                            <label for="">Ingrese el segundo número </label>
+                            <input type="text" name="num2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                <div class="col"><button type="button" class="btn btn-primary" onclick="division();">DIVIDIR</button></div>
+                                </div>
                         </div>
                     </form>
-                    </section>
+                </section>
             </div>
             </div>
         </div>
@@ -443,73 +448,82 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingEighteen">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
-                Pedir dos números, mostrar el resto de la división.
+                Pedir dos números y mostrar el resto de la división.
             </button>
             </h2>
-            <div id="collapseEighteen" class="accordion-collapse collapse" aria-labelledby="headingSeventeen" data-bs-parent="#accordionExample">
+            <div id="collapseEighteen" class="accordion-collapse collapse" aria-labelledby="headingEighteen" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <section>
-                    <h3>18.Pedir dos números, mostrar el resto de la división.</h3>
+                    <h3>18.Pedir dos números y mostrar el resto de la división.</h3>
                     <h3 id="liveAlertPlaceholder18"></h3>
                     <form class="exer1" id="exer18">
                         <div class="container-fluid">   
-                            <label>Ingrese un número</label>
+                            <label>Ingrese el primer número</label>
                             <input type="text" name="num1" id="">
-                            <button type="submit" class="btn btn-danger">VERIFICAR</button>
+                            <label for="">Ingrese el segundo número </label>
+                            <input type="text" name="num2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                <div class="col"><button type="button" class="btn btn-primary" onclick="resto();">RESULTADO</button></div>
+                                </div>
                         </div>
                     </form>
-                    </section>
+                </section>
             </div>
             </div>
         </div>
 
         <div class="accordion-item">
-            <h2 class="accordion-header" id="headingNineteen">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
-                Pedir dos números, mostrar si el primer número es divisible por el segundo. 
+            <h2 class="accordion-header" id="headingNighteen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNighteen" aria-expanded="false" aria-controls="collapseNighteen">
+                Pedir dos números y mostrar el primero es divisible entre el segundo.
             </button>
             </h2>
-            <div id="collapseNineteen" class="accordion-collapse collapse" aria-labelledby="headingNineteen" data-bs-parent="#accordionExample">
+            <div id="collapseNighteen" class="accordion-collapse collapse" aria-labelledby="headingNighteen" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <section>
-                    <h3>19.Pedir dos números, mostrar si el primer número es divisible por el segundo.</h3>
+                    <h3>19.Pedir dos números y mostrar el primero es divisible entre el segundo.</h3>
                     <h3 id="liveAlertPlaceholder19"></h3>
                     <form class="exer1" id="exer19">
                         <div class="container-fluid">   
-                            <label>Ingrese un número</label>
+                            <label>Ingrese el primer número</label>
                             <input type="text" name="num1" id="">
-                            <button type="submit" class="btn btn-warning">VERIFICAR</button>
+                            <label for="">Ingrese el segundo número </label>
+                            <input type="text" name="num2">
+                            <div class="container-fluid">
+                                <div class="row">
+                                <div class="col"><button type="button" class="btn btn-primary" onclick="divisible();">CONSULTAR</button></div>
+                                </div>
                         </div>
                     </form>
-                    </section>
+                </section>
             </div>
             </div>
         </div>
 
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwenty">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
-                Pedir un número, mostrar la suma total desde 1 hasta n. 
-            </button>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+                    Pedir un número y mostrar la lista de los números pares hasta n.
+                </button>
             </h2>
             <div id="collapseTwenty" class="accordion-collapse collapse" aria-labelledby="headingTwenty" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <section>
-                    <h3>20.Pedir un número, mostrar la suma total desde 1 hasta n.</h3>
-                    <h3 id="liveAlertPlaceholder20"></h3>
+                <div class="accordion-body">
+                    <section>
+                        <h3>20.Pedir un número y mostrar la lista de los números pares hasta n.</h3>
+                        <h3 id="liveAlertPlaceholder20"></h3>
                     <form class="exer1" id="exer20">
                         <div class="container-fluid">   
-                            <label>Ingrese un número</label>
-                            <input type="text" name="num1" id="">
-                            <button type="submit" class="btn btn-warning">VERIFICAR</button>
-                        </div>
-                    </form>
+                                <label>Ingrese un número</label>
+                                <input type="text" name="num1" id="">
+                                <div class="col"><button type="button" class="btn btn-primary" onclick="listaPares();">CONSULTAR</button></div>
+                                </div>
+                        </form>
                     </section>
-            </div>
+                </div>
             </div>
         </div>
-    </div>
-</div><br><br><br><br>    
+<br><br><br><br>    
 <script async src="./js/main.js"></script>
 </body>
 </html>

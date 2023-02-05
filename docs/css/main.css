@@ -17,9 +17,6 @@ h1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif 
 }
 
-.accordion{
-    opacity: .9;  
-}
 .container-fluid{
     display: flex;
     flex-direction: column;
