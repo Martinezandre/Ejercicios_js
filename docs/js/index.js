@@ -53,7 +53,7 @@ try{
 };
     if(obj.user===permitido.user && 
     parseInt(obj.pass)===permitido.pass){
-    window.open("./main.html","_self"); 
+    window.open("./menu.html","_self"); 
     }else{
     alert('¡Acceso denegado! revise su información', 'warning');
     } main
